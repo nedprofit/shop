@@ -1,0 +1,51 @@
+<body class="bg-light">
+
+<div class="container">
+  <div class="py-5 text-center">
+    <h1>Админ-панель</h1>
+    <p class="lead">Панель, позволяющая создавать промокоды и видеть все успешные транзакции пользователей вместе с их
+      данными.
+      Перейти к странице <%= link_to "покупки товаров", root_path %> у данного веб-приложения.</p>
+  </div>
+
+  <div class="col-md-8 order-md-1">
+    <h4 class="mb-3">Генерация промокодов</h4>
+    <form class="needs-validation" novalidate="">
+      <div class="mb-3">
+        <label for="address">Маска промокода</label>
+
+        <small class="text-muted">(Маска промокода задается строкой вида "123abc*#",
+          @ — произвольная буква латинского алфавита, # — произвольная цифра, * — произвольная буква или цифра.
+          Таким образом, по маске "promo@@@###" могут быть сгенерированы коды "promoxyz123", "promoert777" и т.д.)
+        </small>
+        <input type="text" class="form-control" id="address" placeholder="promo@@@###" required="">
+      </div>
+
+      <div class="mb-3">
+        <label for="address" data-toggle="tooltip" data-placement="top" title="Для создания промокода по процентам
+          введите число со знаком процент. Для фиксированной скидки   введите число без процента.
+          ">Сумма скидки</label> <span class="text-muted"> (в процентах или фиксированную сумму)</span>
+        <input type="text" class="form-control" id="address" placeholder="12%" required="">
+      </div>
+
+      <div class="mb-3">
+        <label for="address" data-toggle="tooltip" data-placement="top" title="Для создания бесконечного количества активаций введите число ноль">
+          Количество активаций у каждого промокода</label>
+        <input type="text" class="form-control" id="address" placeholder="0" required="">
+      </div>
+
+      <div class="mb-3">
+        <label for="address">Количество промокодов для генерации</label>
+        <input type="text" class="form-control" id="address" placeholder="5" required="">
+      </div>
+
+      <button class="btn btn-primary btn-lg btn-block" type="submit">Сгенерировать</button>
+    </form>
+  </div>
+  <hr class="mb-4">
+
+  <div class="col-md-8 order-md-1">
+    <h4 class="mb-3">Cписок успешных транзакций</h4>
+  </div>
+</div>
+</body>

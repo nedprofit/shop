@@ -1,0 +1,61 @@
+
+<body class="bg-light">
+
+<div class="container">
+  <div class="py-5 text-center">
+    <h1>Форма покупки</h1>
+    <p class="lead">Ниже представлена форма для покупки товара, которая работает с базой данных Postgres и позволяет
+    снижать стоимость товара с помощью промокодов, генерируемых в
+      <%= link_to "администраторской панели", admin_path %> данного веб-приложения.</p>
+  </div>
+
+  <div class="row">
+    <div class="col-md-4 order-md-2 mb-4">
+      <h4 class="d-flex justify-content-between align-items-center mb-3">
+        <span class="text-muted">Общая сумма к оплате</span>
+      </h4>
+      <ul class="list-group mb-3">
+        <li class="list-group-item d-flex justify-content-between bg-light">
+          <div class="text-success">
+            <h6 class="my-0">Promo code</h6>
+            <small>GODHELPME</small>
+          </div>
+          <span class="text-success">-₽0</span>
+        </li>
+        <li class="list-group-item d-flex justify-content-between">
+          <span>Всего (руб)</span>
+          <strong>₽5000</strong>
+        </li>
+      </ul>
+
+      <form class="card p-2">
+        <div class="input-group">
+          <input type="text" class="form-control" placeholder="Промокод">
+          <div class="input-group-append">
+            <button type="submit" class="btn btn-secondary">Подтвердить</button>
+          </div>
+        </div>
+      </form>
+    </div>
+    <div class="col-md-8 order-md-1">
+      <h4 class="mb-3">Информация о заказе</h4>
+      <form class="needs-validation" novalidate="">
+        <div class="mb-3">
+            <label for="exampleFormControlTextarea1">Описание товара</label>
+            <textarea class="form-control" id="exampleFormControlTextarea1" placeholder="Лекарство от ковида" rows="3"></textarea>
+        </div>
+
+        <div class="mb-3">
+          <label for="address">Стоимость товара</label><span class="text-muted"> (в рублях)</span>
+          <input type="text" class="form-control" id="address" placeholder="5000" required="">
+        </div>
+
+        <hr class="mb-4">
+        <button class="btn btn-primary btn-lg btn-block" type="submit">Совершить оплату</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+
+</body></html>
