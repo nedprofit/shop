@@ -7,14 +7,8 @@
       данными.
       Перейти к странице <%= link_to "покупки товаров", root_path %> у данного веб-приложения.</p>
   </div>
-  <div class="col-md-8 order-md-1">
-    <h4 class="mb-3">Генерация промокодов</h4>
 
-
-
-  </div>
-
-
+  <%= render 'promocodes#create' %>
   <div class="col-md-8 order-md-1">
     <h4 class="mb-3">Генерация промокодов</h4>
     <form class="needs-validation" novalidate="">

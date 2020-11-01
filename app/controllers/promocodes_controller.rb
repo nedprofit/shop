@@ -1,3 +1,5 @@
 class PromocodesController < ApplicationController
-  def new; end
+  def create;
+    @promocodes = Promocode.new
+  end
 end

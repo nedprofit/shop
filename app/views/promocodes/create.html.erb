@@ -1,0 +1,37 @@
+<body class="bg-light">
+
+<div class="container">
+  <div class="py-5 text-center">
+    <h1>Админ-панель</h1>
+    <p class="lead">Панель, позволяющая создавать промокоды и видеть все успешные транзакции пользователей вместе с их
+      данными.
+      Перейти к странице <%= link_to "покупки товаров", root_path %> у данного веб-приложения.</p>
+  </div>
+  <div class="col-md-8 order-md-1">
+    <h4 class="mb-3">Генерация промокодов</h4>
+
+    <%= form_for(@promocodes) do |p| %>
+      <div class="mb-3">
+        <%= p.label :code, 'Маска промокода' %>
+        <small class="text-muted"> (Маска промокода задается строкой вида "123abc*#",
+                                   @ — произвольная буква латинского алфавита, # — произвольная цифра, * — произвольная буква или цифра.
+                                   Таким образом, по маске "promo@@@###" могут быть сгенерированы коды "promoxyz123", "promoert777" и т.д.)
+        </small>
+        <%= p.text_field :code, value: 'promo@@@###', class: 'form-control' %>
+      </div>
+      <div class="mb-3">
+        <%= p.label :discount_rub, 'Cкидка' %>
+        <%= p.text_field :discount_rub, value: '500', class: 'form-control' %>
+      </div>
+      <div class="mb-3">
+        <%= p.label :value, 'Количество активаций' %>
+        <%= p.text_field :value, class: 'form-control' %>
+      </div>
+      <%= p.submit "Cгенерировать", class: "btn btn-primary btn-lg btn-block" %>
+   <% end %>
+
+  </div>
+  <hr class="mb-4">
+
+</div>
+</body>
