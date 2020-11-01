@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
-  get 'users/new'
-  root 'pages#index'
+  root 'users#new'
   get  '/admin', to: 'pages#admin'
-
+  resources :users
 end

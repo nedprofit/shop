@@ -1,2 +1,36 @@
-<h1>User#new</h1>
-<p>Find me in app/views/user/new.html.erb</p>
+<body class="bg-light">
+
+<div class="container">
+  <div class="py-5 text-center">
+    <h1>Форма покупки</h1>
+    <p class="lead">Ниже представлена форма для покупки товара, которая работает с базой данных Postgres и позволяет
+      снижать стоимость товара с помощью промокодов, генерируемых в
+      <%= link_to "администраторской панели", admin_path %> данного веб-приложения.</p>
+  </div>
+
+  <div class="row">
+
+    <div class="col-md-8 order-md-1">
+      <h4 class="mb-3">Информация о заказе</h4>
+
+      <%= form_for(@user) do |f| %>
+        <div class="mb-3">
+        <%= f.label :order_descr, 'Описание заказа' %>
+        <%= f.text_area :order_descr, value: 'Лекарство от ковида', class: 'form-control' %>
+        </div>
+        <div class="mb-3">
+        <%= f.label :price, 'Стоимость товара' %>
+        <%= f.text_field :price, value: '5000', class: 'form-control' %>
+        </div>
+        <div class="mb-3">
+        <%= f.label :promocode, 'Промокод' %>
+        <%= f.text_field :promocode, class: 'form-control' %>
+        </div>
+        <%= f.submit "Cовершить оплату", class: "btn btn-primary btn-lg btn-block" %>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+
+</body>
