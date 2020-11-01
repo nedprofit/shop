@@ -6,10 +6,10 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      flash[:success] = "Покупка успешно сделана. Cумма оплаты #{user_params[:price]} руб"
+      flash[:success] = "Покупка успешно сделана. Cумма оплаты вместе с скидкой #{user_params[:price]} руб. Размер скидки: "
       redirect_to @user
     else
-      render 'new'
+      redirect_to root_path
     end
   end
   def show
