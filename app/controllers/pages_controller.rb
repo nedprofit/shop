@@ -1,5 +1,7 @@
 class PagesController < ApplicationController
   def index; end
 
-  def admin; end
+  def admin;
+    @users = User.all
+  end
 end

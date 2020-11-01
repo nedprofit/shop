@@ -7,6 +7,13 @@
       данными.
       Перейти к странице <%= link_to "покупки товаров", root_path %> у данного веб-приложения.</p>
   </div>
+  <div class="col-md-8 order-md-1">
+    <h4 class="mb-3">Генерация промокодов</h4>
+
+
+
+  </div>
+
 
   <div class="col-md-8 order-md-1">
     <h4 class="mb-3">Генерация промокодов</h4>
@@ -46,6 +53,11 @@
 
   <div class="col-md-8 order-md-1">
     <h4 class="mb-3">Cписок успешных транзакций</h4>
+    <% @users.each do |user| %>
+      <li>
+        <%= user.order_descr %>, <%= user.price %> руб <%= user.promocode %>
+      </li>
+    <% end %>
   </div>
 </div>
 </body>
